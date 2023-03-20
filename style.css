@@ -1,18 +1,22 @@
+/* fonte usada em todos os textos */
 body {
     font-family: 'Montserrat', sans-serif;
 }
 
+/* ambiente do cabeçalho */
 header {
     background: #BBBBBB;
     padding: 20px 0;
 }
 
+/* elementos do cabeçalho */
 .caixa {
     position: relative;
     width: 940px;
     margin: 0 auto;
 }
 
+/* estilos do menu de navegação */
 nav {
     position: absolute;
     top: 110px;
@@ -33,7 +37,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #C78C19;
+    color: lightblue;
     text-decoration: underline;
 }
 
@@ -75,6 +79,7 @@ nav a:hover {
     margin: 0 20px 20px 0;
 }
 
+/* estilos do mapa interativo */
 .mapa {
     padding: 3em 0;
     background: linear-gradient(#FEFEFE, #888888);
@@ -90,6 +95,7 @@ nav a:hover {
     margin: 0 auto;
 }
 
+/* customização da lista de benefícios */
 .beneficios {
     padding: 3em 0;
     background: #888888;
@@ -120,13 +126,22 @@ nav a:hover {
 
 .imagem-beneficios {
     width: 60%;
+    opacity: 1;
+    transition: 400ms;
+    box-shadow: 10px 10px 10px black;
 }
 
+.imagem-beneficios:hover {
+    opacity: 0.3;
+}
+
+/* vídeo incorporado do YouTube */
 .video {
     width: 560px;
     margin: 2em auto;
 }
 
+/* estilo da listagem dos produtos e seus valores */
 .produtos {
     width: 940px;
     margin: 0 auto;
@@ -143,27 +158,29 @@ nav a:hover {
     box-sizing: border-box;
     border: 2px solid #000000;
     border-radius: 10px;
+    transition: 400ms;
 }
 
 .produtos li:hover {
-    border-color: #C78C19;
+    border-color: gray;
 }
 
 .produtos li:active {
-    border-color: #088C19;
+    border-color: lightblue;
 }
 
 .produtos li:hover h2 {
-    font-size: 34px;
+    font-size: 30px;
 }
 
 .produtos h2 {
-    font-size: 30px;
+    font-size: 27px;
     font-weight: bold;
+    transition: 300ms;
 }
 
 .produto-descricao {
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .produto-preco {
@@ -172,8 +189,28 @@ nav a:hover {
     margin-top: 10px;
 }
 
+/* estilo usado na tabela de horários */
+table {
+    float: right;
+    width: 300px;
+    margin: 100px 150px;
+}
+
+thead {
+    background: #555555;
+    color: white;
+    font-weight: bold;
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px 15px;
+}
+
+/* customização do formulário de contato */
 form {
-    margin: 40px 0;
+    width: 940px;
+    margin: 40px auto;
 }
 
 form label, form legend {
@@ -185,24 +222,16 @@ form label, form legend {
 .input-padrao {
     display: block;
     margin: 0 0 20px;
-    padding: 10px 25px;
+    padding: 10px 20px;
     width: 50%;
+}
+
+fieldset {
+    margin-top: 10px;
 }
 
 .checkbox {
     margin: 20px 0;
-}
-
-footer {
-    text-align: center;
-    background: url(imagens/bg.jpg);
-    padding: 40px 0;
-}
-
-.copyright {
-    color: #FFFFFF;
-    font-size: 13px;
-    margin: 20px 0 0;
 }
 
 .enviar {
@@ -216,6 +245,7 @@ footer {
     border-radius: 5px;
     transition: 1s all;
     cursor: pointer;
+    margin: 10px 0 0 35px;
 }
 
 .enviar:hover {
@@ -223,17 +253,52 @@ footer {
     transform: scale(1.2);
 }
 
-table {
-    margin: 20px 0 40px;
+/* customização do rodapé */
+footer {
+    text-align: center;
+    background: url(imagens/bg.jpg);
+    padding: 40px 0;
 }
 
-thead {
-    background: #555555;
-    color: white;
-    font-weight: bold;
+.copyright {
+    color: #FFFFFF;
+    font-size: 13px;
+    margin: 20px 0 0;
 }
 
-th, td {
-    border: 1px solid #000000;
-    padding: 8px 15px;
+/* portabilidade para dispositivos mobile */
+@media screen and (max-width: 480px) {
+    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video, .produtos, table, form {
+        width: auto;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .lista-beneficios, .imagem-beneficios {
+        width: 100%;
+    }
+
+    .produtos li {
+        width: calc(100% - 6px);
+        margin: 0 3px;
+    }
+
+    .produtos li:not(:last-child), .lista-beneficios { 
+        margin-bottom: 10px;
+    }
+
+    table {
+        float: none;
+        margin: 10px auto;
+    }
+
+    .input-padrao {
+        width: 75%;
+    }
 }
